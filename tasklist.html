@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+
+    <style>
+      /* Add CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(132, 132, 132);
+        text-align: center;
+        height: 100vh;
+      }
+
+      /* Output box css code */
+      #outputBox {
+        border: 1px solid;
+        width: 500px;
+        height: 300px;
+        background-color: #fff;
+        padding: 20px;
+        margin: 50px auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow-y: scroll;
+      }
+
+      /* Add Button css code */
+      #addButton {
+        background-color: #fbeee0;
+        border: 2px solid #422800;
+        border-radius: 30px;
+        box-shadow: #422800 4px 4px 0 0;
+        color: #422800;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 400;
+        font-size: 18px;
+        padding: 0 18px;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        touch-action: manipulation;
+        margin-top: 10px;
+      }
+
+      #completeButton,
+      #removeButton {
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 29px;
+        padding: 0 10px;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+      }
+
+      #completeButton {
+        background-color: #fff;
+        border: 1px solid #d5d9d9;
+        color: #0f1111;
+      }
+
+      #removeButton {
+        background-color: transparent;
+        border: 1px solid #095f5f;
+        color: #0b0b0b;
+      }
+
+      #taskList {
+        font-size: larger;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: capitalize;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #taskList li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .points {
+        display: flex;
+        justify-content: end;
+        gap: 5px;
+        color: rgb(39, 38, 38);
+        background-color: rgb(189, 188, 188);
+        float: right;
+        align-items: center;
+        border-radius: 10px;
+        margin-right: 10px;
+        padding-left: 8px;
+        padding-right: 8px;
+        height: 25px;
+        width: 50px;
+      }
+
+      .coin {
+        width: 16px;
+        height: 16px;
+      }
+
+      .point {
+        font-size: larger;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="points">
+      <img class="coin" src="./assects/coin.png" />
+      <span class="point" id="points">0</span>
+      <span>pts</span>
+    </div>
+    <!--Headline-->
+    <h1 id="name">ToDoList</h1>
+
+    <!-- Input div -->
+    <div id="inputDiv">
+      <!-- Text Input code -->
+      <div>
+        <input
+          type="text"
+          id="task"
+          placeholder="Enter task..."
+          style="height: 40px; width: 500px"
+        />
+      </div>
+      <!-- Button to add text -->
+      <div>
+        <button onclick="addTask()" id="addButton">ADD</button>
+      </div>
+    </div>
+
+    <!-- Output div -->
+    <div id="outputBox">
+      <ol id="taskList"></ol>
+    </div>
+  </body>
+
+  <script>
+    let pointsDisplay = document.getElementById("points");
+    let point = 0;
+    var count = 0;
+    function addTask() {
+      var taskValue = document.getElementById("task").value;
+      if (taskValue.trim() === "") {
+        alert("Task cannot be empty!");
+        return;
+      }
+
+      var taskList = document.getElementById("taskList");
+
+      var listItem = document.createElement("li");
+      listItem.id = `list-${count}`;
+
+      var taskText = document.createElement("span");
+      taskText.textContent = taskValue;
+
+      var completeButton = document.createElement("button");
+      completeButton.textContent = "Complete";
+      completeButton.className = "completeButton";
+      completeButton.onclick = function () {
+        completeTask(listItem.id);
+      };
+
+      var removeButton = document.createElement("button");
+      removeButton.textContent = "Clear";
+      removeButton.className = "removeButton";
+      removeButton.onclick = function () {
+        removeTask(listItem.id);
+      };
+
+      listItem.appendChild(taskText);
+      listItem.appendChild(completeButton);
+      listItem.appendChild(removeButton);
+
+      taskList.appendChild(listItem);
+      count += 1;
+      document.getElementById("task").value = "";
+    }
+
+    
+    function completeTask(id) {
+      let task = document.getElementById(id).querySelector("span");
+      if (task.style.textDecoration !== "line-through") {
+        task.style.textDecoration = "line-through";
+        points++;
+        pointsDisplay.innerHTML = `${points}`;
+      }
+    }
+
+    function removeTask(id) {
+      var task = document.getElementById(id);
+      task.remove();
+    }
+  </script>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HabitFlow</title>
+  </head>
+
+  <style>
+    body {
+      padding: 0%;
+      margin: 0%;
+    }
+    .name {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: larger;
+      padding-top: 20px;
+    }
+    .firstsection {
+      display: flex;
+      padding-right: 20px;
+      font-family: Inter, sans-serif;
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    .first {
+      display: flex;
+      justify-content: space-around;
+      background-color: rgb(214, 212, 212);
+      font-size: larger;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .title {
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      font-size: 55px;
+      line-height: 125%;
+    }
+
+    .para {
+      font-size: 20px;
+    }
+    .second {
+      text-align: center;
+      padding-top: 8%;
+    }
+
+    .fbutton {
+      appearance: button;
+      backface-visibility: hidden;
+      background-color: #405cf5;
+      border-radius: 6px;
+      border-width: 0;
+      box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+        rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      font-family: -apple-system, system-ui, "Segoe UI", Roboto,
+        "Helvetica Neue", Ubuntu, sans-serif;
+      font-size: 100%;
+      height: 44px;
+      line-height: 1.15;
+      margin: 12px 0 0;
+      outline: none;
+      overflow: hidden;
+      padding: 0 25px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      transform: translateZ(0);
+      transition: all 0.2s, box-shadow 0.08s ease-in;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      cursor: pointer;
+      width: 15%;
+    }
+    .fbutton:focus {
+      box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+        rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+        rgba(50, 151, 211, 0.3) 0 0 0 4px;
+    }
+
+    .appstore {
+      height: 70px;
+      width: 450px;
+      margin-top: 35px;
+      padding-left: 33%;
+    }
+
+    .third {
+      padding-left: 100px;
+      margin-top: 50px;
+      
+    }
+
+    .tline {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 125%;
+    }
+    .tpara {
+      font-size: 18px;
+      font-family: Inter, sans-serif;
+    }
+
+    .schedule {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .section {
+      width: 300px;
+      border-radius: 5px;
+      background-color: #ffffff;
+      padding: 20px;
+      row-gap: 18px;
+      column-gap: 18px;
+    }
+
+    .section-header {
+      padding: 10px;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .morning-header {
+      background-color: #007bff;
+      border-radius: 5px;
+    }
+
+    .noon-header {
+      background-color: #ff5722;
+      border-radius: 5px;
+    }
+
+    .night-header {
+      background-color: #9c27b0;
+      border-radius: 5px;
+    }
+
+    .activity {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px 16px;
+      background-color: #ffffff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    .activity-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    .activity-time {
+      font-size: 12px;
+      color: #555;
+      font-size: 18px;
+      line-height: 160%;
+      font-size: small;
+    }
+
+    .morning .activity {
+      border: 1px solid #007bff;
+    }
+
+    .noon .activity {
+      border: 1px solid #ff5722;
+    }
+
+    .night .activity {
+      border: 1px solid #9c27b0;
+    }
+    .morning {
+      background-color: #f3f4f5;
+      border: 0.5px solid rgb(201, 200, 200);
+    }
+    .noon {
+      background-color: #f9f3f2;
+      border: 0.5px solid rgb(201, 200, 200);
+    }
+    .night {
+      background-color: #f9eff9;
+      border: 0.5px solid rgb(201, 200, 200);
+    }
+
+    .postert {
+      width: 1217px;
+      height: 600px;
+    }
+    .poster{
+        margin-top: 50px;
+        padding-left: 30px;
+    }
+
+  </style>
+  <body>
+    <div class="first">
+      <div class="name">HabitFlow</div>
+      <div class="firstsection">
+        <ul>
+          Home
+        </ul>
+        <ul>
+          Try Free
+        </ul>
+        <ul>
+          About
+        </ul>
+        <ul>
+          Blog
+        </ul>
+      </div>
+    </div>
+
+    <div class="second">
+      <div class="solgan">
+        <h1 class="title">
+          Flow Into a Better,<br />
+          You with New Habits
+        </h1>
+        <p class="para">
+          Harness the power of our personalized habit tracker app to streamline
+          you're <br />
+          everyday routines and achieve you're goals.
+        </p>
+      </div>
+      <button class="fbutton">Try Free</button>
+    </div>
+    <div>
+      <img class="appstore" src="./assects/playstoreappstore.png" alt="" />
+    </div>
+
+    <div class="poster">
+      <img class="postert" src="./assects/habbitposter.png" />
+    </div>
+
+    <div class="third">
+      <div>
+        <img
+          src="https://assets-global.website-files.com/5d3aa39f8474c472841a7dfc/6480ae01528a527a4ce3ff21_target-04.svg"
+          alt=""
+        />
+        <h1 class="tline">Arrange, Implement, Achieve</h1>
+        <p class="tpara">
+          Begin your day with a well-structured, organized plan that keeps you
+          focused on success. <br />
+          Here's an example of how your day with Habitify could unfold:
+        </p>
+      </div>
+    </div>
+
+    <div class="schedule">
+      <div class="section morning">
+        <div class="section-header morning-header">Morning</div>
+        <div class="activity">
+          <div class="activity-title">Run</div>
+          <div class="activity-time">8 AM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Meditate</div>
+          <div class="activity-time">8:30 AM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Plan the day</div>
+          <div class="activity-time">9 AM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Hydrate</div>
+          <div class="activity-time">9.30 AM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Study</div>
+          <div class="activity-time">10 AM</div>
+        </div>
+      </div>
+      <div class="section noon">
+        <div class="section-header noon-header">Noon</div>
+        <div class="activity">
+          <div class="activity-title">Healthy Lunch</div>
+          <div class="activity-time">12 PM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Connect with a colleague</div>
+          <div class="activity-time">2 PM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Express gratitude</div>
+          <div class="activity-time">4 PM</div>
+        </div>
+      </div>
+      <div class="section night">
+        <div class="section-header night-header">Night</div>
+        <div class="activity">
+          <div class="activity-title">Reflect</div>
+          <div class="activity-time">8 PM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Wind Down</div>
+          <div class="activity-time">9 PM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Disconnect from screens</div>
+          <div class="activity-time">9:30 PM</div>
+        </div>
+        <div class="activity">
+          <div class="activity-title">Prepare for tomorrow</div>
+          <div class="activity-time">10 PM</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
