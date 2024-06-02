@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journaling</title>
+  </head>
+  <style>
+    .title {
+      text-align: center;
+      font-size: 5vh;
+      font-family: monospace;
+    }
+  </style>
+  <body>
+    <h1 class="title">Write Today's Moments, Treasure Tomorrow's Memories.</h1>
+    <input type="date" id="date" placeholder="ADD DATE" />
+    <input type="text" id="text" placeholder="Write Today's Moments" />
+    <button id="Save" onclick="saveButton()">Save</button>
+    <div>
+      <h3 id="print"></h3>
+    </div>
+    <script>
+      function saveButton() {
+        let textNotes = document.getElementById("text").value;
+        let paragrah = document.getElementById("print");
+        let date = document.getElementById("date").value;
+        paragrah.innerText = `Date: ${date} \n Moments: ${textNotes}`;
+      }
+    </script>
+  </body>
+</html>

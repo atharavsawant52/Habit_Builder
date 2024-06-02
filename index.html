@@ -22,6 +22,7 @@
       font-family: Inter, sans-serif;
       font-size: 18px;
       line-height: 160%;
+      cursor: pointer;
     }
 
     .first {
@@ -217,7 +218,7 @@
         <ul>
           Home
         </ul>
-        <ul>
+        <ul onclick="mainPage()">
           Try Free
         </ul>
         <ul>
@@ -241,7 +242,7 @@
           everyday routines and achieve you're goals.
         </p>
       </div>
-      <button class="fbutton">Try Free</button>
+      <button class="fbutton" onclick="mainPage()">Try Free</button>
     </div>
     <div>
       <img class="appstore" src="./assects/playstoreappstore.png" alt="" />
@@ -326,4 +327,10 @@
       </div>
     </div>
   </body>
+
+  <script>
+    function mainPage(){
+      location.href="main.html";
+    }
+  </script>
 </html>
