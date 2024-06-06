@@ -22,7 +22,6 @@
       font-family: Inter, sans-serif;
       font-size: 18px;
       line-height: 160%;
-      cursor: pointer;
     }
 
     .first {
@@ -207,7 +206,7 @@
     }
     .poster{
         margin-top: 50px;
-        padding-left: 30px;
+        padding-left: 50px;
     }
 
   </style>
@@ -215,10 +214,10 @@
     <div class="first">
       <div class="name">HabitFlow</div>
       <div class="firstsection">
-        <ul>
+        <ul onclick="indexPage()" style="cursor: pointer;">
           Home
         </ul>
-        <ul onclick="mainPage()">
+        <ul onclick="mainPage()" style="cursor: pointer;">
           Try Free
         </ul>
         <ul>
@@ -331,6 +330,10 @@
   <script>
     function mainPage(){
       location.href="main.html";
+    }
+
+    function indexPage(){
+      location.href="index.html";
     }
   </script>
 </html>

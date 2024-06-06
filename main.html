@@ -21,6 +21,7 @@
       height: 500px;
       border-radius: 10px;
       align-items: center;
+      margin-left: 10px;
     }
 
     .habitoption {
@@ -29,7 +30,7 @@
       gap: 20px;
       width: 200px;
     }
-    .ToDoList {
+    .button {
       font-family: "Open Sans", sans-serif;
       font-size: 16px;
       letter-spacing: 2px;
@@ -47,44 +48,14 @@
       touch-action: manipulation;
     }
 
-    .ToDoList:active {
+    .button:active {
       box-shadow: 0px 0px 0px 0px;
       top: 5px;
       left: 5px;
     }
 
     @media (min-width: 768px) {
-      .ToDoList {
-        padding: 0.25em 0.75em;
-      }
-    }
-
-    .StudyWatch {
-      font-family: "Open Sans", sans-serif;
-      font-size: 16px;
-      letter-spacing: 2px;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #000;
-      cursor: pointer;
-      border: 3px solid;
-      padding: 0.25em 0.5em;
-      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
-        4px 4px 0px 0px, 5px 5px 0px 0px;
-      position: relative;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
-
-    .StudyWatch:active {
-      box-shadow: 0px 0px 0px 0px;
-      top: 5px;
-      left: 5px;
-    }
-
-    @media (min-width: 768px) {
-      .StudyWatch {
+      .button {
         padding: 0.25em 0.75em;
       }
     }
@@ -98,9 +69,9 @@
     <div class="first">
       <div class="title">Habit Builder</div>
       <div class="habitoption">
-        <button onclick="taskList()" class="ToDoList">ToDoList</button>
-        <button onclick="stopWatch()" class="StudyWatch">Study_Watch</button>
-        <button>Journaling</button>
+        <button onclick="taskList()" class="button">ToDoList</button>
+        <button onclick="stopWatch()" class="button">Study Timer</button>
+        <button onclick="habitTips()" class="button">Habit Tips</button>
       </div>
     </div>
     <div class="second"></div>
@@ -113,5 +84,10 @@
     function stopWatch() {
       location.href = "stopwatch.html";
     }
+
+    function habitTips() {
+      location.href = "HabitTips.html";
+    }
+
   </script>
 </html>
