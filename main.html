@@ -5,12 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    body {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    .first {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 10px;
+      border: 1px solid black;
+      height: 500px;
+      border-radius: 10px;
+      align-items: center;
+    }
+
+    .habitoption {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 200px;
+    }
+    .ToDoList {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      cursor: pointer;
+      border: 3px solid;
+      padding: 0.25em 0.5em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
+        4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .ToDoList:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 5px;
+      left: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .ToDoList {
+        padding: 0.25em 0.75em;
+      }
+    }
+
+    .StudyWatch {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      cursor: pointer;
+      border: 3px solid;
+      padding: 0.25em 0.5em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
+        4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .StudyWatch:active {
+      box-shadow: 0px 0px 0px 0px;
+      top: 5px;
+      left: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .StudyWatch {
+        padding: 0.25em 0.75em;
+      }
+    }
+
+    .title{
+      font-size: 30px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; text-align: center;
+    }
+  </style>
   <body>
     <div class="first">
       <div class="title">Habit Builder</div>
       <div class="habitoption">
-        <button onclick="taskList()">ToDoList</button>
-        <button onclick="stopWatch()">Study_Watch</button>
+        <button onclick="taskList()" class="ToDoList">ToDoList</button>
+        <button onclick="stopWatch()" class="StudyWatch">Study_Watch</button>
         <button>Journaling</button>
       </div>
     </div>
