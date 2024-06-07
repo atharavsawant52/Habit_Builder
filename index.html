@@ -96,7 +96,6 @@
     .third {
       padding-left: 100px;
       margin-top: 50px;
-      
     }
 
     .tline {
@@ -204,20 +203,32 @@
       width: 1217px;
       height: 600px;
     }
-    .poster{
-        margin-top: 50px;
-        padding-left: 50px;
+    .poster {
+      margin-top: 50px;
+      padding-left: 50px;
     }
 
+    .challenge{
+      border-top-right-radius: 100px;
+      border-top-left-radius: 100px;
+      background-color: rgb(211, 211, 216);
+      margin-top: 50px;
+      padding-top: 50px;
+      border-bottom-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+
+    }
   </style>
   <body>
     <div class="first">
       <div class="name">HabitFlow</div>
       <div class="firstsection">
-        <ul onclick="indexPage()" style="cursor: pointer;">
+        <ul onclick="indexPage()" style="cursor: pointer">
           Home
         </ul>
-        <ul onclick="mainPage()" style="cursor: pointer;">
+        <ul onclick="mainPage()" style="cursor: pointer">
           Try Free
         </ul>
         <ul>
@@ -325,15 +336,77 @@
         </div>
       </div>
     </div>
+
+    <div class="challenge">
+      <div class="leadarboards" style="display: flex; justify-content: space-evenly;">
+        <div class="textboard">
+          <h1 style="font-size: 56px; font-family: sans-serif;">
+            Enhance the Skill <br />
+            with <br />Exciting <span style="color: rgb(161, 145, 124);">Challenges.</span>
+          </h1>
+          <p style="font-size: 18px; font-family: monospace; color: rgb(122, 113, 96);">
+            Engage in friendly competitions and join monthly <br />
+            challenges to transform habit-building into <br />
+            an exciting pursuit.
+          </p>
+
+          <h2 style="font-size: large; font-style: italic; text-decoration: underline;">Challenge your friends :</h2> <span>enhance your habit-forming journey with some friendly competition.</span>
+           <h2 style="font-size: large; font-style: italic; text-decoration: underline;">Take on Monthly Challenges: </h2> <span>Scale the leaderboards and transform habit formation into an exciting and rewarding journey.</h2></span>
+        </div>
+        <div>
+          <img src="./assects/leadarboard.png" height="400px" width="500px">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tools">
+      <div class="toolstile">Tools for Habit Mastery</div>
+  </div>
+  <div class="alltools" style="gap: 5px;">
+      <div class="rowtools1" style="display: flex; justify-content: center; gap: 5px;margin-bottom: 3px;">
+          <div style="border: 1px solid rgb(182, 176, 176); width: 250px;"> <!-- Added width -->
+              <h1 style="text-align: center;">FocusTimer</h1>
+              <p style="text-align: center;">A FocusTimer helps you manage <br>
+              study sessions effectively, <br>
+              promoting productivity through <br>
+              timed intervals and breaks.</p>
+          </div>
+  
+          <div style="border: 1px solid rgb(182, 176, 176); width: 250px;"> <!-- Added width -->
+              <h1 style="text-align: center;">TO-DO List</h1>
+              <p style="text-align: center;">A to-do list helps you organize <br>
+              tasks efficiently, ensuring nothing <br>
+              important is overlooked.</p>
+          </div>
+      </div>
+  
+      <div class="rowtools2" style="display: flex; justify-content: center; gap: 5px;">
+          <div style="border: 1px solid rgb(182, 176, 176); width: 250px;"> <!-- Added width -->
+              <h1 style="text-align: center;">Habit Tips</h1>
+              <p style="text-align: center;">Information to build habit <br>
+              and tips to build you <br>
+              fast habit</p>
+          </div>
+  
+          <div style="border: 1px solid rgb(182, 176, 176); width: 250px;"> <!-- Added width -->
+              <h1 style="text-align: center;">Challenges</h1>
+              <p style="text-align: center;">Overcome challenges by embracing <br>
+              them as opportunities for <br>
+              growth and learning.</p>
+          </div>
+      </div>
+  </div>
+  
   </body>
 
   <script>
-    function mainPage(){
-      location.href="main.html";
+    function mainPage() {
+      location.href = "main.html";
     }
 
-    function indexPage(){
-      location.href="index.html";
+    function indexPage() {
+      location.href = "index.html";
     }
   </script>
 </html>
