@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       margin: 0%;
@@ -72,6 +73,7 @@
         <button onclick="taskList()" class="button">ToDoList</button>
         <button onclick="stopWatch()" class="button">FocusTimer</button>
         <button onclick="habitTips()" class="button">Habit Tips</button>
+        <button onclick="HabitTier()" class="button"> HabitTier List</button>
       </div>
     </div>
     <div class="second"></div>
@@ -87,6 +89,10 @@
 
     function habitTips() {
       location.href = "HabitTips.html";
+    }
+
+    function HabitTier() {
+      location.href = "HabitTier.html";
     }
 
   </script>
