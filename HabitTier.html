@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Habit Tier List</title>
-</head>
-<body>
-    <video width="100%" height="100%" controls>
-        <source src="./assects/video/The Habit Tier List - 32 Habits (Which one should you build next_).mp4" type="video/mp4">
-      </video>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tier List</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .title {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 64px;
+        margin: 20px 0;
+        color: #2c3e50;
+      }
+
+      .title2 {
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+        margin: 10px 0;
+        color: #34495e;
+      }
+
+      .video {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      .video video {
+        border: 5px solid #2c3e50;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 600px) {
+        .title {
+          font-size: 48px; 
+        }
+
+        .title2 {
+          font-size: 16px;
+        }
+
+        .video video {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">The Habit Tier List</h1>
+      <h2 class="title2">32 Habits (Which one should you build next?)</h2>
+      <div class="video">
+        <video width="500" height="500" controls>
+          <source src="./assects/video/The Habit Tier List - 32 Habits (Which one should you build next_).mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </body>
 </html>
