@@ -318,10 +318,10 @@
       <ul onclick="mainPage()" style="cursor: pointer">
         Try Free
       </ul>
-      <ul>
+      <ul onclick="aboutSection()">
         About
       </ul>
-      <ul>
+      <ul onclick="blogSection()">
         Blog
       </ul>
     </div>
@@ -524,6 +524,12 @@
 </body>
 
 <script>
+
+  function blogSection(){
+    location.href="blog.html"
+  }
+
+  
     function mainPage() {
       location.href = "main.html";
     }
@@ -532,5 +538,8 @@
       location.href = "index.html";
     }
 
+    function aboutSection(){
+      location.href="about.html"
+    }
 </script>
   </html>
