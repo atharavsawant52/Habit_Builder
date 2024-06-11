@@ -68,58 +68,59 @@
       text-align: center;
     }
 
-    .chart1{
+    .chart1 {
       height: 500px;
       width: 500px;
       margin-top: 100px;
       margin-right: 50px;
     }
 
-    .chart2{
+    .chart2 {
       height: 300px;
       width: 300px;
       margin-top: 100px;
       margin-right: 50px;
     }
 
-    .second{
-    display: flex;
-    justify-content: space-around;
-    gap: 50px;
-    border: 1px solid black;
-    height: 500px;
-    margin-top: 10px;
-    margin-right: 10px;
+    .second {
+      display: flex;
+      justify-content: space-around;
+      gap: 50px;
+      border: 1px solid black;
+      height: 500px;
+      margin-top: 10px;
+      margin-right: 10px;
     }
 
-    .main{
+    .main {
       display: flex;
       justify-content: space-between;
     }
   </style>
   <body>
     <div class="main">
-    <div class="first">
-      <div class="title">Habit Builder</div>
-      <div class="habitoption">
-        <button onclick="taskList()" class="button">ToDoList</button>
-        <button onclick="stopWatch()" class="button">FocusTimer</button>
-        <button onclick="habitTips()" class="button">Habit Tips</button>
-        <button onclick="HabitTier()" class="button">HabitTier List</button>
-        <button onclick="templates()" class="button">Templates</button>
-        <button onclick="leaderBoard()" class="button">leaderboard</button>
+      <div class="first">
+        <div class="title">Habit Builder</div>
+        <div class="habitoption">
+          <button onclick="taskList()" class="button">ToDoList</button>
+          <button onclick="stopWatch()" class="button">FocusTimer</button>
+          <button onclick="habitTips()" class="button">Habit Tips</button>
+          <button onclick="HabitTier()" class="button">HabitTier List</button>
+          <button onclick="templates()" class="button">Templates</button>
+          <button onclick="leaderBoard()" class="button">leaderboard</button>
+          <button onclick="openHabitForm()" class="button">Add Habit</button>
+        </div>
       </div>
-    </div>
 
-    <div class="second">
-      <div class="chart1">
-        <canvas id="myChart" ></canvas>
-      </div>
-      <div class="chart2">
-        <canvas id="myChart1" ></canvas>
+      <div class="second">
+        <div class="chart1">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="chart2">
+          <canvas id="myChart1"></canvas>
+        </div>
       </div>
     </div>
-  </div>
   </body>
   <script>
     function taskList() {
@@ -145,12 +146,23 @@
       location.href = "Templates.html";
     }
 
+    function openHabitForm() {
+      window.open("habit.html", "AddHabit", "width=400,height=300");
+    }
+
     const ctx = document.getElementById("myChart");
 
     new Chart(ctx, {
       type: "bar",
       data: {
-        labels: ["Reading", "Learning", "Writing", "Playing", "Coding", "New skills"],
+        labels: [
+          "Reading",
+          "Learning",
+          "Writing",
+          "Playing",
+          "Coding",
+          "New skills",
+        ],
         datasets: [
           {
             label: "Progress",
@@ -173,7 +185,14 @@
     new Chart(ctx1, {
       type: "pie",
       data: {
-        labels: ["Coding", "Cricket", "Swimming", "study", "Logic Building", "Distraction"],
+        labels: [
+          "Coding",
+          "Cricket",
+          "Swimming",
+          "study",
+          "Logic Building",
+          "Distraction",
+        ],
         datasets: [
           {
             label: "Skills",
@@ -190,5 +209,11 @@
         },
       },
     });
+
+    function addDataToChart(habit, progress) {
+      myChart.data.labels.push(habit);
+      myChart.data.datasets[0].data.push(progress);
+      myChart.update();
+    }
   </script>
 </html>
